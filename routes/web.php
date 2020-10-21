@@ -14,8 +14,10 @@
 use App\City;
 use App\Country;
 use App\Product;
+use App\Role;
 use App\State;
 use App\Tag;
+use App\User;
 
 Route::get('states', function(){
     return State::with(['country','cities'])->paginate(1);
@@ -29,6 +31,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/test', function(){
-    $product=Product::find(1501);
-    return $product->tags;
-});
+    return 'hello';
+})->middleware(['userisadmine']);

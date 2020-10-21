@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Auth;
 
 class UserIsSupport
 {
@@ -15,6 +16,16 @@ class UserIsSupport
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        
+        $user=Auth::user();
+        $roles=$user->roles;
+        foreach($roles as $role){
+
+            if($role->id==2){
+                return $next($request);
+            }
+        }
+
+        return redirect(route('home'));
     }
 }
