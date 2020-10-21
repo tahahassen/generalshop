@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddOptionsToProducts extends Migration
+class CreateTicketTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class AddOptionsToProducts extends Migration
      */
     public function up()
     {
-        Schema::table('products', function (Blueprint $table) {
-            //
-            $table->addColumn('text','options')->nullable();
+        Schema::create('ticket_types', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('type');
+            $table->timestamps();
         });
     }
 
@@ -26,9 +27,6 @@ class AddOptionsToProducts extends Migration
      */
     public function down()
     {
-        Schema::table('products', function (Blueprint $table) {
-            //
-            $table->dropColumn('options');
-        });
+        Schema::dropIfExists('ticket_types');
     }
 }
