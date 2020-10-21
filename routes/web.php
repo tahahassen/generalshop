@@ -33,3 +33,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/test', function(){
     return 'hello';
 })->middleware(['userisadmine']);
+Route::group(['auth','userisadmin'], function () {
+    Route::get('add_unit','UnitController@showAdd')->name('new_unit');
+    Route::get('units','UnitController@index')->name('units');
+});

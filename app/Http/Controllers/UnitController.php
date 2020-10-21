@@ -7,6 +7,14 @@ use Illuminate\Http\Request;
 
 class UnitController extends Controller
 {
+    
+    public function showAdd()
+    {
+        return view('admin.units.add_edit');
+    }
+    
+    
+    
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +22,7 @@ class UnitController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.units.units');
     }
 
     /**
