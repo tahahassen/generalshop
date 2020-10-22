@@ -22,7 +22,11 @@ class UnitController extends Controller
      */
     public function index()
     {
-        return view('admin.units.units');
+        $units = Unit::paginate(env('PAGINATE_COUNT'));
+
+        return view('admin.units.units')->with(
+            ['units' => $units]
+        );
     }
 
     /**

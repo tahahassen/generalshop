@@ -34,6 +34,27 @@ Route::get('/test', function(){
     return 'hello';
 })->middleware(['userisadmine']);
 Route::group(['auth','userisadmin'], function () {
-    Route::get('add_unit','UnitController@showAdd')->name('new_unit');
+    
     Route::get('units','UnitController@index')->name('units');
+    //Categories
+    Route::get('categories','CategoryController@index')->name('categories');
+    //Products
+    Route::get('products','ProductController@index')->name('products');
+
+    //Tags
+    Route::get('tags','TagController@index')->name('tags');
+    //payments
+    //orders
+    //shipments
+
+    //countries
+    Route::get('countries','CountryController@index')->name('countries');
+    //cities
+    Route::get('cities','CityController@index')->name('cities');
+    //states
+    
+    //reviews
+    //tickets
+
+    //roles
 });

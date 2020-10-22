@@ -1,11 +1,13 @@
 @extends('layouts.app')
 
-@section('container')
+@section('content')
     
-    <div class="row">
-    
-        <div class="col-md-12">
-            <h1>Units</h1>
+<div class="container">
+        <div class="row">
+        
+            <div class="col-md-12">
+                <h1>Add Units</h1>
+            </div>
         </div>
-    </div>
+</div>
 @endsection
