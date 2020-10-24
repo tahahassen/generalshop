@@ -8,9 +8,11 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+    
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://kit.fontawesome.com/ac1006fefd.js" crossorigin="anonymous"></script>
+    
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -74,11 +76,33 @@
                                     <a class="dropdown-item" href="{{ route('countries') }}">
                                         {{ __('Countries') }}
                                     </a>
+
+                                    <a class="dropdown-item" href="{{ route('cities') }}">
+                                        {{ __('Cities') }}
+                                    </a>
+
+                                    <a class="dropdown-item" href="{{ route('states') }}">
+                                        {{ __('States') }}
+                                    </a>
+
+                                    <a class="dropdown-item" href="{{ route('reviews') }}">
+                                        {{ __('Reviews') }}
+                                    </a>
+
+                                    <a class="dropdown-item" href="{{ route('tickets') }}">
+                                        {{ __('Tickets') }}
+                                    </a>
+
+                                    <a class="dropdown-item" href="{{ route('roles') }}">
+                                        {{ __('Roles') }}
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+
+                                    
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
@@ -95,5 +119,7 @@
             @yield('content')
         </main>
     </div>
+    <script src="{{ asset('js/app.js') }}" ></script>
+    @yield('scripts')
 </body>
 </html>

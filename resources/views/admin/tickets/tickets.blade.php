@@ -10,18 +10,21 @@
     
                     <div class="card-body">
                         <div class="row">
-                            @foreach ($cities as $city)
+                            @foreach ($tickets as $ticket)
                                     <div class="col-md-3">
                                         <div class="alert alert-primary" role="alert">
-                                            <p>{{$city->name}}</p>
-                                            <p>State : {{$city->country->name}}</p>
-                                            <p>Country  : {{$city->state->name}}</p>
+                                            <p>{{$ticket->title}}</p>
+                                            <p>{{$ticket->ticket_type->type}}</p>
+                                            <p>{{$ticket->user->formatedName()}}</p>
+                                            <p>{{$ticket->order_id}}</p>
+                                            <p>{{$ticket->message}}</p>
+                                            <p>{{$ticket->status}}</p>
                                             <p></p>
                                         </div>    
                                     </div>
                                 
                             @endforeach 
-                            {{$cities->links()}}
+                            {{$tickets->links()}}
                         </div>
                         
                     </div>

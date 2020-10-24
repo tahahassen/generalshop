@@ -36,6 +36,10 @@ Route::get('/test', function(){
 Route::group(['auth','userisadmin'], function () {
     
     Route::get('units','UnitController@index')->name('units');
+    Route::post('units','UnitController@store');
+    Route::delete('units','UnitController@destroy');
+    Route::put('units','UnitController@update');
+    Route::post('search-units','UnitController@search')->name('search-units');
     //Categories
     Route::get('categories','CategoryController@index')->name('categories');
     //Products
@@ -43,6 +47,9 @@ Route::group(['auth','userisadmin'], function () {
 
     //Tags
     Route::get('tags','TagController@index')->name('tags');
+    Route::post('tags','TagController@store');
+    Route::post('search-tags','TagController@search')->name('search-tags');
+    Route::delete('tags','TagController@destroy');
     //payments
     //orders
     //shipments
@@ -52,9 +59,11 @@ Route::group(['auth','userisadmin'], function () {
     //cities
     Route::get('cities','CityController@index')->name('cities');
     //states
-    
+    Route::get('states','StateController@index')->name('states');
     //reviews
+    Route::get('reviews','ReviewController@index')->name('reviews');
     //tickets
-
+    Route::get('tickets','TicketController@index')->name('tickets');
     //roles
+    Route::get('roles','RoleController@index')->name('roles');
 });

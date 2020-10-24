@@ -10,18 +10,17 @@
     
                     <div class="card-body">
                         <div class="row">
-                            @foreach ($cities as $city)
+                            @foreach ($states as $state)
                                     <div class="col-md-3">
                                         <div class="alert alert-primary" role="alert">
-                                            <p>{{$city->name}}</p>
-                                            <p>State : {{$city->country->name}}</p>
-                                            <p>Country  : {{$city->state->name}}</p>
-                                            <p></p>
+                                            <p>{{$state->name}}</p>
+                                            <p>Country  : {{$state->country->name}}</p>
+                                            
                                         </div>    
                                     </div>
                                 
                             @endforeach 
-                            {{$cities->links()}}
+                            {{$states->links()}}
                         </div>
                         
                     </div>
