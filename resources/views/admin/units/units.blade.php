@@ -54,7 +54,7 @@
                             {{(!is_null($showLinks) && $showLinks) ? $units->links() : ''}}
                         </div>
 
-                    <form action="{{route('search-units')}}" method="Post">
+                    <form action="{{route('search-units')}}" method="get">
                         @csrf
                         <div class="row ml-2">
                                 <div class="form-group col-md-6">
@@ -120,7 +120,7 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <form action="{{route('units')}}" method="POST" >
+                <form action="{{route('units')}}" method="post" >
                     <div class="modal-body">
                             <p id="delete-message"></p>
                             @csrf

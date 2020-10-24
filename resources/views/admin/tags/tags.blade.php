@@ -46,7 +46,7 @@
                             {{(!is_null($showLinks) && $showLinks) ? $tags->links() : ''}}
                         </div>
 
-                        <form action="{{route('search-tags')}}" method="Post">
+                        <form action="{{route('search-tags')}}" method="get">
                         @csrf
                         <div class="row ml-2">
                                 <div class="form-group col-md-6">
@@ -58,6 +58,38 @@
                         </div>
                         </form>
                     </div>
+                </div>
+            </div>
+
+            <div class="modal edit-window" tabindex="-1">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Delete Unit</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <form action="{{route('tags')}}" method="POST" >
+                        <div class="modal-body row">
+                                <p id="edit-message"></p>
+                                @csrf
+                                <div class="form-group col-md-6">
+                                    <label for="tag_name">Tag name</label>
+                                    <input type="text" name="tag_name" class="form-control" id="edit_tag_name" placeholder="tag name" required>
+                                    
+                                </div>
+                            
+                                <input type="hidden" name="_method" value="put">
+                                <input type="hidden" name="tag_id" value="" id="edit_tag_id">
+                                
+                        </div>
+                        <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </form>
+                  </div>
                 </div>
             </div>
 
@@ -124,28 +156,28 @@
                 $deleteMessage.text('Are you sure you want to delete the tag '+tagName);
                 $deleteTagId.val(tagID);
                 $deleteWindow.modal('show');
-            })
+            });
             
-            var $editUnit = $('.edit-unit');
+            var $editTag = $('.edit-tag');
             var $editWindow = $('.edit-window');
-            var $editUnitId = $('#edit_unit_id');
+            var $editTagId = $('#edit_tag_id');
             var $editMessage = $('#edit-message');
-            var $edit_unit_name = $('#edit_unit_name');
-            var $edit_unit_code = $('#edit_unit_code');
+            var $edit_tag_name = $('#edit_tag_name');
+            
 
-            $editUnit.on('click',function(e){
+            $editTag.on('click',function(e){
+                console.log('111111111111');
                 e.preventDefault();
-                var unitID = $(this).data('unitid');
-                var unitName =  $(this).data('unitname');
-                var unitCode =  $(this).data('unitcode');
+                var tagID = $(this).data('tagid');
+                var tagName =  $(this).data('tagname');
+                
 
-                $edit_unit_name.val(unitName);
-                $edit_unit_code.val(unitCode);
-                $editUnitId.val(unitID);
+                $edit_tag_name.val(tagName);
+                $editTagId.val(tagID);
 
-                $editMessage.text('Are you sure you want to edit the unit '+unitName+' '+unitCode);
+                $editMessage.text('Are you sure you want to edit the tag '+tagName);
                 $editWindow.modal('show');
-            })
+            });
 
             
         });

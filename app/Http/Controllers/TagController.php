@@ -153,10 +153,10 @@ class TagController extends Controller
         $tagID = intval($request->input('tag_id'));
         $tag = tag::find($tagID);
 
-        $tag->tag_name = $request->input('tag_name');
+        $tag->tag = $request->input('tag_name');
         
         $tag->save();
-        Session::flash('message','tag '.$tag->tag_name.' has been apdated');
+        Session::flash('message','tag '.$tag->tag.' has been apdated');
         return redirect()->back();
     }
 
@@ -175,7 +175,7 @@ class TagController extends Controller
         }
         
         $id=$request->input('tag_id');
-        tag::destroy($id);
+        Tag::destroy($id);
         Session::flash('message', 'the tag has been deleted');
         return redirect()->back();
     }
