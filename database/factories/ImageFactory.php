@@ -9,6 +9,6 @@ $factory->define(Image::class, function (Faker $faker) {
     return [
         //
         'url'           => $faker   -> imageUrl(800,600),
-        'product_id'    => $faker   -> numberBetween(1,500),    
+        'product_id'    => $faker   -> numberBetween(1500,2000),    
     ];
 });

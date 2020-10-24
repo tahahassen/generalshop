@@ -9,7 +9,7 @@ $factory->define(Review::class, function (Faker $faker) {
     return [
         //
         'user_id'       =>$faker->numberBetween(1,500),
-        'product_id'    =>$faker->numberBetween(1,1500),
+        'product_id'    =>$faker->numberBetween(1500,3000),
         'stars'         =>$faker->numberBetween(1,5),
         'review'        =>$faker->paragraph(),
     ];
