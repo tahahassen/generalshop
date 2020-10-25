@@ -42,6 +42,10 @@ Route::group(['auth','userisadmin'], function () {
     Route::get('search-units','UnitController@search')->name('search-units');
     //Categories
     Route::get('categories','CategoryController@index')->name('categories');
+    Route::post('categories','CategoryController@store');
+    Route::get('search-categories','CategoryController@search')->name('search-categories');
+    Route::delete('categories','CategoryController@destroy');
+    Route::put('categories','CategoryController@update');
     //Products
     Route::get('products','ProductController@index')->name('products');
 

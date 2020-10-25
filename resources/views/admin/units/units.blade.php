@@ -7,20 +7,14 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">Units</div>
-    
                     <div class="card-body">
-                        
                         <form action="{{route('units')}}" class="row" method="POST">
                                 @csrf
-                            
-                                
                                     <div class="form-group col-md-6">
                                         <label for="unit_name">Unit name</label>
                                         <input type="text" name="unit_name" class="form-control" id="unit_name" placeholder="Unit name" required>
                                         
                                     </div>
-                                
-                                
                                     <div class="form-group col-md-6">
                                         <label for="unit_code">Unit code</label>
                                         <input type="text" name="unit_code" class="form-control" id="unit_code" placeholder="Unit code" required>
@@ -33,7 +27,6 @@
                                 
                             </div>
                         </form>
-                       
                         <div class="row mr-2 ml-2">
                             @foreach ($units as $unit)
                                     <div class="col-md-3">
