@@ -27,4 +27,12 @@ class Product extends Model
     public function tags(){
         return $this->belongsToMany(Tag::class);
     }
+
+    public function has_unit(){
+        return $this->belongsTo(Unit::class , $foreignKey = 'unit' , $ownerKey='id');
+    }
+
+    public function jsonOptions(){
+        return json_decode($this->options);
+    }
 }

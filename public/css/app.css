@@ -10935,3 +10935,44 @@ span.buttons-span span:last-child a {
   color: #692323;
 }
 
+span.product-header-title {
+  color: #1e501e;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+a.remove-option {
+  color: tomato;
+}
+
+a.activate-image-upload {
+  display: block;
+}
+
+.image-card-upload a.remove-image-upload {
+  font-size: 2rem;
+  color: tomato;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 1;
+}
+
+.image-card-upload a.remove-image-upload i {
+  font-size: 2rem;
+  color: tomato;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 1;
+}
+
+.card-body i {
+  font-size: 6rem;
+  color: #7ead48;
+}
+
+input.image-file-upload {
+  display: none;
+}
+

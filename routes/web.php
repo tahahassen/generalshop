@@ -48,6 +48,16 @@ Route::group(['auth','userisadmin'], function () {
     Route::put('categories','CategoryController@update');
     //Products
     Route::get('products','ProductController@index')->name('products');
+    
+    Route::get('new-product','ProductController@newProduct')->name('new-product');
+    Route::get('update-product/{id}','ProductController@newProduct')->name('update-product');
+    Route::get('search-products','ProductController@search')->name('search-products');
+    
+    Route::put('new-product','ProductController@update');
+    Route::post('new-product','ProductController@store');
+    Route::delete('new-product/{id}','ProductController@delete');
+
+    Route::post('delete-image','ProductController@deleteImage')->name('delete-image');
 
     //Tags
     Route::get('tags','TagController@index')->name('tags');
